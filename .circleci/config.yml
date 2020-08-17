@@ -6,7 +6,7 @@ jobs:
     steps:
       - slack/notify:
           color: '#42e2f4'
-          message: This is a custom message notification
+          message: Build Successful
 orbs:
   node: circleci/node@3.0.0
   slack: circleci/slack@3.4.2
