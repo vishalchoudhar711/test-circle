@@ -14,11 +14,11 @@ jobs:
       - run: npm test
       - slack/notify:
           color: "#42e2f4"
-          mentions: "vishal.choudhar,"
+          mentions: "adlake-qa,"
           message: A custom message to notify the channel about the latest build
       - slack/status:
           fail_only: true
-          mentions: "vishal.choudhar"  
+          mentions: "adlake-qa"  
 workflows:
   node-tests:
     jobs:
