@@ -1,6 +1,24 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
+  slack: circleci/slack@3.4.2
+jobs:
+  build-test-and-notify:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run: npm test
+      - slack/notify:
+          color: "#42e2f4"
+          mentions: "vishal.choudhar,"
+          message: A custom message to notify the channel about the latest build
+      - slack/status:
+          fail_only: true
+          mentions: "vishal.choudhar"  
 workflows:
   node-tests:
     jobs:
