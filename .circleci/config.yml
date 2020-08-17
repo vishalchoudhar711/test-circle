@@ -16,7 +16,8 @@ jobs:
           color: "#42e2f4"
           message: Message to notify the channel about the latest build
       - slack/status:
-          fail_only: false  
+          fail_only: true
+          mentions: "adlake-qa"  
 workflows:
   node-tests:
     jobs:
