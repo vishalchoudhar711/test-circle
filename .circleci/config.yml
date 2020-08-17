@@ -15,7 +15,7 @@ jobs:
       - slack/notify:
           color: "#42e2f4"
           mentions: "adlake-qa,"
-          message: A custom message to notify the channel about the latest build
+          message: Message to notify the channel about the latest build
       - slack/status:
           fail_only: true
           mentions: "adlake-qa"  
